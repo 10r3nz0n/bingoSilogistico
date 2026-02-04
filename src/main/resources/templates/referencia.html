@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Referência - Silogismos Categóricos (v2)</title>
+  <style>
+    :root{
+      --bg: #fafafa;
+      --card: #ffffff;
+      --line: #e6e6e6;
+      --ink: #111;
+      --muted: #666;
+      --accent: #b00020;
+      --yellow: #fff8dc;
+
+      --chipS: #e57373;
+      --chipM: #2aa876;
+      --chipP: #f2c14e;
+    }
+
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--ink); }
+    a { color: inherit; }
+
+    header { background: var(--card); border-bottom: 1px solid #eee; }
+    .wrap { max-width: 1300px; margin: 0 auto; padding: 8px 10px; }
+    .topRow { display:flex; align-items:center; justify-content:space-between; gap: 10px; flex-wrap: wrap; }
+    .title { font-size: 16px; font-weight: 800; margin: 0; }
+    .subtitle { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.2; }
+    button { font-size: 14px; padding: 8px 12px; cursor:pointer; border-radius: 10px; border: 1px solid #d0d0d0; background:#fff; }
+    button:hover { background:#f3f3f3; }
+
+    main { padding: 8px 10px 10px 10px; }
+    .viewport { height: calc(100vh - 70px); }
+
+    .panel {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 8px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 8px 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .cardYellow { background: var(--yellow); }
+
+    .h { font-size: 13.5px; font-weight: 800; margin: 0 0 6px 0; color:#333; }
+    .small { font-size: 12px; color: var(--muted); line-height: 1.2; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { border: 1px solid #e1e1e1; padding: 5px 6px; text-align: left; vertical-align: top; }
+    th { background: #f7f7f7; font-weight: 800; }
+
+    .topGrid { display:grid; grid-template-columns: 1.15fr 1.85fr; gap: 8px; height: 100%; }
+    .noteBox { display:flex; flex-direction:column; gap: 6px; }
+
+    .figGrid { height: 100%; display:grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+    .figCard { display:flex; flex-direction:column; gap: 6px; height: 100%; }
+    .figHead { display:flex; align-items:baseline; justify-content:space-between; gap: 8px; }
+    .figTitle { font-weight: 900; font-size: 13px; }
+    .figSig { font-size: 11.5px; color: var(--muted); }
+
+    /* Diagrama padronizado: premissa maior, premissa menor, conclusao - tudo em caixas */
+    .figDiagram { display:flex; flex-direction:column; gap: 6px; }
+    .lineBox {
+      border: 1px solid #333;
+      background: #fff;
+      border-radius: 12px;
+      padding: 6px 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      font-size: 12.5px;
+    }
+    .chips { display:flex; gap: 6px; align-items:center; }
+    .chip {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      border: 1px solid rgba(0,0,0,0.25);
+      color: #111;
+    }
+    .chipS { background: var(--chipS); }
+    .chipM { background: var(--chipM); }
+    .chipP { background: var(--chipP); }
+
+    .modes { display:grid; grid-template-columns: 1fr; gap: 2px; }
+    .mLine { display:flex; align-items:baseline; justify-content:space-between; gap: 10px; font-size: 12px; line-height: 1.1; }
+    .mName { font-weight: 800; }
+    .mForm { font-weight: 900; color: var(--accent); }
+
+    .legend { display:flex; gap: 10px; flex-wrap: wrap; }
+    .tag { border: 1px solid #ddd; border-radius: 999px; padding: 2px 8px; font-size: 11.5px; background: #fff; }
+
+    .bottomRow { display:grid; grid-template-columns: 1.35fr 0.65fr; gap: 8px; }
+    .steps { font-size: 12px; color: var(--ink); line-height: 1.25; }
+    .steps .mono { font-weight: 900; }
+
+    @media (min-width: 981px) {
+      body { overflow: hidden; }
+      main, .viewport { overflow: hidden; }
+    }
+
+    @media (max-width: 980px) {
+      .viewport { height: auto; }
+      body { overflow: auto; }
+      .panel { grid-template-rows: auto auto auto; }
+      .topGrid { grid-template-columns: 1fr; }
+      .figGrid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .bottomRow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topRow">
+      <div>
+        <div class="title">Referência rápida: Silogismos Categóricos</div>
+        <div class="subtitle">Formas A/E/I/O • Figuras 1–4 (posição de M) • Modos válidos (somente os 19 do bingo)</div>
+      </div>
+      <div>
+        <a href="/" style="text-decoration:none;"><button type="button">Voltar ao jogo</button></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap viewport">
+    <div class="panel">
+
+      <div class="topGrid">
+        <div class="card cardYellow">
+          <div class="h">Formas categóricas (A/E/I/O)</div>
+          <table>
+            <thead>
+              <tr>
+                <th style="width:58px;">Letra</th>
+                <th style="width:170px;">Tipo</th>
+                <th>Modelo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">A</td><td>Universal afirmativa</td><td>Todo S é P</td></tr>
+              <tr><td class="mono">E</td><td>Universal negativa</td><td>Nenhum S é P</td></tr>
+              <tr><td class="mono">I</td><td>Particular afirmativa</td><td>Algum S é P</td></tr>
+              <tr><td class="mono">O</td><td>Particular negativa</td><td>Algum S não é P</td></tr>
+            </tbody>
+          </table>
+          <div class="small" style="margin-top:6px;">
+            Forma do modo: três letras na ordem premissa maior, premissa menor, conclusão.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="h">Legenda e leitura rápida</div>
+          <div class="noteBox">
+            <div class="small">
+              S = termo menor • P = termo maior • M = termo médio (não aparece na conclusão)
+            </div>
+            <div class="legend">
+              <span class="tag mono">Premissa maior</span>
+              <span class="tag mono">Premissa menor</span>
+              <span class="tag mono">Conclusão</span>
+            </div>
+            <div class="small">
+              Estratégia: identificar figura pelo lugar de M nas premissas, identificar A/E/I/O e localizar o modo no bloco da figura.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="figGrid">
+
+        <div class="card figCard cardYellow">
+          <div class="figHead">
+            <div class="figTitle">Figura 1</div>
+            <div class="figSig mono">M–P / S–M / S–P</div>
+          </div>
+
+          <div class="figDiagram">
+            <div class="lineBox">
+              <div>Premissa maior: M – P</div>
+              <div class="chips"><span class="chip chipM">M</span><span class="chip chipP">P</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Premissa menor: S – M</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipM">M</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Conclusão: S – P</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipP">P</span></div>
+            </div>
+          </div>
+
+          <div class="h" style="font-size:12.5px; margin:0;">Modos nesta figura</div>
+          <div class="modes">
+            <div class="mLine"><span class="mName">Barbara</span><span class="mForm mono">AAA</span></div>
+            <div class="mLine"><span class="mName">Celarent</span><span class="mForm mono">EAE</span></div>
+            <div class="mLine"><span class="mName">Darii</span><span class="mForm mono">AII</span></div>
+            <div class="mLine"><span class="mName">Ferio</span><span class="mForm mono">EIO</span></div>
+          </div>
+        </div>
+
+        <div class="card figCard">
+          <div class="figHead">
+            <div class="figTitle">Figura 2</div>
+            <div class="figSig mono">P–M / S–M / S–P</div>
+          </div>
+
+          <div class="figDiagram">
+            <div class="lineBox">
+              <div>Premissa maior: P – M</div>
+              <div class="chips"><span class="chip chipP">P</span><span class="chip chipM">M</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Premissa menor: S – M</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipM">M</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Conclusão: S – P</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipP">P</span></div>
+            </div>
+          </div>
+
+          <div class="h" style="font-size:12.5px; margin:0;">Modos nesta figura</div>
+          <div class="modes">
+            <div class="mLine"><span class="mName">Cesare</span><span class="mForm mono">EAE</span></div>
+            <div class="mLine"><span class="mName">Camestres</span><span class="mForm mono">AEE</span></div>
+            <div class="mLine"><span class="mName">Festino</span><span class="mForm mono">EIO</span></div>
+            <div class="mLine"><span class="mName">Baroco</span><span class="mForm mono">AOO</span></div>
+          </div>
+        </div>
+
+        <div class="card figCard">
+          <div class="figHead">
+            <div class="figTitle">Figura 3</div>
+            <div class="figSig mono">M–P / M–S / S–P</div>
+          </div>
+
+          <div class="figDiagram">
+            <div class="lineBox">
+              <div>Premissa maior: M – P</div>
+              <div class="chips"><span class="chip chipM">M</span><span class="chip chipP">P</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Premissa menor: M – S</div>
+              <div class="chips"><span class="chip chipM">M</span><span class="chip chipS">S</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Conclusão: S – P</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipP">P</span></div>
+            </div>
+          </div>
+
+          <div class="h" style="font-size:12.5px; margin:0;">Modos nesta figura</div>
+          <div class="modes">
+            <div class="mLine"><span class="mName">Darapti</span><span class="mForm mono">AAI</span></div>
+            <div class="mLine"><span class="mName">Disamis</span><span class="mForm mono">IAI</span></div>
+            <div class="mLine"><span class="mName">Datisi</span><span class="mForm mono">AII</span></div>
+            <div class="mLine"><span class="mName">Felapton</span><span class="mForm mono">EAO</span></div>
+            <div class="mLine"><span class="mName">Bocardo</span><span class="mForm mono">OAO</span></div>
+            <div class="mLine"><span class="mName">Ferison</span><span class="mForm mono">EIO</span></div>
+          </div>
+        </div>
+
+        <div class="card figCard cardYellow">
+          <div class="figHead">
+            <div class="figTitle">Figura 4</div>
+            <div class="figSig mono">P–M / M–S / S–P</div>
+          </div>
+
+          <div class="figDiagram">
+            <div class="lineBox">
+              <div>Premissa maior: P – M</div>
+              <div class="chips"><span class="chip chipP">P</span><span class="chip chipM">M</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Premissa menor: M – S</div>
+              <div class="chips"><span class="chip chipM">M</span><span class="chip chipS">S</span></div>
+            </div>
+            <div class="lineBox">
+              <div>Conclusão: S – P</div>
+              <div class="chips"><span class="chip chipS">S</span><span class="chip chipP">P</span></div>
+            </div>
+          </div>
+
+          <div class="h" style="font-size:12.5px; margin:0;">Modos nesta figura</div>
+          <div class="modes">
+            <div class="mLine"><span class="mName">Bramantip</span><span class="mForm mono">AAI</span></div>
+            <div class="mLine"><span class="mName">Camenes</span><span class="mForm mono">AEE</span></div>
+            <div class="mLine"><span class="mName">Dimaris</span><span class="mForm mono">IAI</span></div>
+            <div class="mLine"><span class="mName">Fesapo</span><span class="mForm mono">EAO</span></div>
+            <div class="mLine"><span class="mName">Fresison</span><span class="mForm mono">EIO</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottomRow">
+        <div class="card">
+          <div class="h">Como usar em 10 segundos</div>
+          <div class="steps">
+            - Identificar a <span class="mono">figura</span> pelo lugar de <span class="mono">M</span> nas premissas<br>
+            - Identificar a forma <span class="mono">A/E/I/O</span> de cada proposição e montar as três letras<br>
+            - No card da figura, localizar o modo pelo <span class="mono">nome</span> e confirmar pelas <span class="mono">três letras</span>
+          </div>
+        </div>
+        <div class="card cardYellow">
+          <div class="h">Créditos</div>
+          <div class="small">
+            Criação do jogo: professor Lorenzon, Unochapecó, semestre letivo 2026.1, com o apoio de Vibe Coding.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+</body>
+</html>

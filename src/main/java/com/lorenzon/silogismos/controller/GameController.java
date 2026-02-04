@@ -27,6 +27,11 @@ public class GameController {
         return "index";
     }
 
+    @GetMapping("/referencia")
+    public String referencia() {
+        return "referencia";
+    }
+
     @PostMapping("/api/reset")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> reset() {

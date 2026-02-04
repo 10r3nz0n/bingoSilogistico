@@ -1,0 +1,25 @@
+# Java build
+/target/
+/build/
+/out/
+/bin/
+
+# Logs
+*.log
+
+# VS Code / IntelliJ / Eclipse
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets (ajuste conforme seu projeto)
+.env
+application-*.properties
+application-*.yml
