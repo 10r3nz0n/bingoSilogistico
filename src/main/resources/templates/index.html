@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bingo de Modos Silogísticos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #fafafa; color: #111; }
+    header, footer { background: #fff; border-bottom: 1px solid #eee; padding: 14px 18px; }
+    footer { border-top: 1px solid #eee; border-bottom: none; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    .topRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .pill { display: inline-block; padding: 6px 12px; border: 1px solid #ddd; border-radius: 999px; font-size: 13px; background: #fff; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    button { font-size: 16px; padding: 10px 14px; cursor: pointer; border-radius: 10px; border: 1px solid #d0d0d0; background: #fff; }
+    button:hover { background: #f3f3f3; }
+    main { padding: 28px 18px; }
+    .board { max-width: 1200px; width: calc(100vw - 36px); margin: 0 auto; background: #fff8dc; border: 1px solid #e6e6e6; border-radius: 16px; padding: 26px 24px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    .title { font-size: 18px; color: #444; margin: 0 0 16px 0; text-align: center; }
+    .argRow { margin: 14px 0; font-size: 48px; line-height: 1.25; }
+    #prem1, #prem2, #conc { white-space: nowrap; overflow-x: auto; overflow-y: hidden; padding-bottom: 6px; }
+    .hlTerm { background: #cfe8ff; padding: 2px 8px; border-radius: 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .hlNote { margin-top: 8px; font-size: 14px; color: #555; }
+
+    #prem1::-webkit-scrollbar, #prem2::-webkit-scrollbar, #conc::-webkit-scrollbar { height: 10px; }
+    .label { font-size: 16px; color: #666; margin-bottom: 6px; }
+    #answer { margin-top: 18px; padding-top: 18px; border-top: 1px solid #eee; display: none; }
+    #bingoBanner { display:none; margin: 14px auto 0 auto; max-width: 1200px; padding: 10px 14px; border: 1px solid #999; border-radius: 10px; background: #f7f7f7; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { background:#fff; border:1px solid #eee; border-radius: 12px; padding: 14px 14px; }
+    ul { margin: 8px 0 0 18px; }
+    .small { font-size: 13px; color:#666; }
+    @media (max-width: 820px) {
+      .grid { grid-template-columns: 1fr; }
+      .argRow { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="topRow">
+      <div>
+        <span class="pill mono" id="pillDraws">Jogadas: 0</span>
+        <span class="pill mono" id="pillWinners">Bingos: 0</span>
+        <span class="pill mono" id="pillDistinct">Modos distintos: 0</span>
+      </div>
+      <div>
+        <button id="btnNext">Próximo argumento</button>
+        <button id="btnAnswer">Mostrar resposta</button>
+        <button id="btnReset">Novo ciclo</button>
+      </div>
+    </div>
+    <div class="small" style="margin-top:10px;">
+      Regra de aula: marcar apenas quando identificar corretamente o nome do modo
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="bingoBanner" class="wrap mono"></div>
+
+  <div class="board">
+    <div class="title">Avaliar o argumento e identificar o modo silogístico</div>
+
+    <div class="argRow">
+      <div class="label">Premissa 1</div>
+      <div id="prem1"></div>
+    </div>
+
+    <div class="argRow">
+      <div class="label">Premissa 2</div>
+      <div id="prem2"></div>
+    </div>
+
+    <div class="argRow">
+      <div class="label">Conclusão</div>
+      <div id="conc"></div>
+    </div>
+
+    <div id="hlNote" class="hlNote" style="display:none;"></div>
+
+    <div id="answer">
+      <div class="label">Resposta</div>
+      <div id="ansName" style="font-size: 42px; margin-bottom: 10px; color: #b00020; font-weight: 700;"></div>
+      <div id="ansMeta" class="mono" style="font-size: 20px; color: #b00020;"></div>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top: 22px;">
+    <div class="grid">
+      <div class="card">
+        <div class="label">Status</div>
+        <div id="statusInfo" class="mono small"></div>
+      </div>
+      <div class="card">
+        <div class="label">Cartelas com Bingo</div>
+        <div class="small">O jogo continua listando novas cartelas vencedoras até iniciar um novo ciclo.</div>
+        <ul id="winnersList"></ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap small">
+    Criação do jogo: professor Lorenzon, Unochapecó, semestre letivo 2026.1, com o apoio de Vibe Coding.</div>
+</footer>
+
+<script>
+  function setText(id, value) { document.getElementById(id).textContent = value; }
+
+  async function refreshStatus() {
+    const res = await fetch('/api/status');
+    const data = await res.json();
+    setText('pillDraws', 'Jogadas: ' + data.totalDraws);
+    setText('pillWinners', 'Bingos: ' + data.winners.length);
+    setText('pillDistinct', 'Modos distintos: ' + data.drawnModesCount);
+    setText('statusInfo', 'Jogadas: ' + data.totalDraws + ' | Modos distintos: ' + data.drawnModesCount);
+
+    const ul = document.getElementById('winnersList');
+    ul.innerHTML = '';
+    data.winners.forEach(n => {
+      const li = document.createElement('li');
+      li.textContent = 'Cartela ' + String(n).padStart(2, '0');
+      ul.appendChild(li);
+    });
+  }
+
+  async function loadNext() {
+    const res = await fetch('/api/next');
+    const data = await res.json();
+
+    setText('prem1', data.premises[0]);
+    setText('prem2', data.premises[1]);
+    setText('conc',  data.conclusion);
+
+    document.getElementById('answer').style.display = 'none';
+    setText('ansName', '');
+    setText('ansMeta', '');
+
+    if (data.newBingos && data.newBingos.length > 0) {
+      const banner = document.getElementById('bingoBanner');
+      banner.style.display = 'block';
+      banner.textContent = 'BINGO: cartela(s) ' + data.newBingos.map(n => String(n).padStart(2,'0')).join(', ')
+        + ' (jogada ' + data.totalDraws + ')';
+    } else {
+      document.getElementById('bingoBanner').style.display = 'none';
+      document.getElementById('bingoBanner').textContent = '';
+    }
+
+    await refreshStatus();
+  }
+
+
+  function normalizeTerm(value) {
+    return value.toLowerCase()
+      .replace(/[\.,;:!\?]+$/g, '')
+      .trim();
+  }
+
+  function parseCategorical(sentence) {
+    // Suporta: Todo S é P. | Nenhum S é P. | Algum S é P. | Algum S não é P.
+    const s = sentence.trim();
+    const rx = /^(Todo|Toda|Todos|Todas|Nenhum|Nenhuma|Nenuns|Nenhumas|Algum|Alguma|Alguns|Algumas)\s+(.+?)\s+(não\s+é|é)\s+(.+?)\.?$/i;
+    const m = s.match(rx);
+    if (!m) {
+      return null;
+    }
+    return {
+      quant: m[1],
+      subject: m[2].trim(),
+      copula: m[3].toLowerCase(),
+      predicate: m[4].trim()
+    };
+  }
+
+  function findMiddleTerm(p1, p2) {
+    const a = parseCategorical(p1);
+    const b = parseCategorical(p2);
+    if (!a || !b) {
+      return null;
+    }
+
+    const termsA = [normalizeTerm(a.subject), normalizeTerm(a.predicate)];
+    const termsB = [normalizeTerm(b.subject), normalizeTerm(b.predicate)];
+
+    for (let i = 0; i < termsA.length; i++) {
+      for (let j = 0; j < termsB.length; j++) {
+        if (termsA[i] === termsB[j]) {
+          // Retorna termo conforme aparece em p1 (preserva acentuação e caixa)
+          return (i === 0) ? a.subject : a.predicate;
+        }
+      }
+    }
+    return null;
+  }
+
+  function highlightFirstOccurrence(sentence, term) {
+    if (!term) { return sentence; }
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const rx = new RegExp(escaped, 'i');
+    const match = sentence.match(rx);
+    if (!match) { return sentence; }
+
+    const found = match[0];
+    return sentence.replace(rx, '<span class="hlTerm">' + found + '</span>');
+  }
+
+  function applyFigureHighlight() {
+    const p1 = document.getElementById('prem1').textContent;
+    const p2 = document.getElementById('prem2').textContent;
+
+    const middle = findMiddleTerm(p1, p2);
+    if (!middle) {
+      document.getElementById('hlNote').style.display = 'none';
+      return;
+    }
+
+    // Mantém conteúdo em uma linha, mas com destaque no termo médio
+    document.getElementById('prem1').innerHTML = highlightFirstOccurrence(p1, middle);
+    document.getElementById('prem2').innerHTML = highlightFirstOccurrence(p2, middle);
+
+    const a = parseCategorical(p1);
+    const b = parseCategorical(p2);
+
+    const posInPrem1 = (normalizeTerm(a.subject) === normalizeTerm(middle)) ? 'sujeito' : 'predicado';
+    const posInPrem2 = (normalizeTerm(b.subject) === normalizeTerm(middle)) ? 'sujeito' : 'predicado';
+
+    const note = 'Termo médio destacado nas premissas (premissa 1: ' + posInPrem1 + ' | premissa 2: ' + posInPrem2 + ').';
+    const noteEl = document.getElementById('hlNote');
+    noteEl.textContent = note;
+    noteEl.style.display = 'block';
+  }
+
+  async function showAnswer() {
+    const res = await fetch('/api/answer');
+    if (!res.ok) { return; }
+    const data = await res.json();
+    document.getElementById('answer').style.display = 'block';
+    setText('ansName', data.name);
+    setText('ansMeta', 'Figura: ' + data.figure + ' | Forma: ' + data.mood);
+    applyFigureHighlight();
+  }
+
+  async function resetDeck() {
+    await fetch('/api/reset', { method: 'POST' });
+    document.getElementById('bingoBanner').style.display = 'none';
+    document.getElementById('bingoBanner').textContent = '';
+    await loadNext();
+  }
+
+  document.getElementById('btnNext').addEventListener('click', loadNext);
+  document.getElementById('btnAnswer').addEventListener('click', showAnswer);
+  document.getElementById('btnReset').addEventListener('click', resetDeck);
+
+  loadNext();
+</script>
+</body>
+</html>

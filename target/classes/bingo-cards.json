@@ -1,0 +1,552 @@
+[
+  {
+    "number": 1,
+    "modes": [
+      "Barbara",
+      "Disamis",
+      "Felapton",
+      "Camenes",
+      "Bramantip",
+      "Festino"
+    ]
+  },
+  {
+    "number": 2,
+    "modes": [
+      "Darii",
+      "Darapti",
+      "Festino",
+      "Disamis",
+      "Dimaris",
+      "Fresison"
+    ]
+  },
+  {
+    "number": 3,
+    "modes": [
+      "Baroco",
+      "Disamis",
+      "Bramantip",
+      "Fresison",
+      "Barbara",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 4,
+    "modes": [
+      "Cesare",
+      "Dimaris",
+      "Camenes",
+      "Ferison",
+      "Celarent",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 5,
+    "modes": [
+      "Cesare",
+      "Datisi",
+      "Fresison",
+      "Fesapo",
+      "Felapton",
+      "Barbara"
+    ]
+  },
+  {
+    "number": 6,
+    "modes": [
+      "Baroco",
+      "Bocardo",
+      "Fresison",
+      "Dimaris",
+      "Datisi",
+      "Darii"
+    ]
+  },
+  {
+    "number": 7,
+    "modes": [
+      "Fresison",
+      "Felapton",
+      "Darii",
+      "Datisi",
+      "Fesapo",
+      "Camestres"
+    ]
+  },
+  {
+    "number": 8,
+    "modes": [
+      "Cesare",
+      "Fresison",
+      "Darii",
+      "Ferison",
+      "Bocardo",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 9,
+    "modes": [
+      "Fesapo",
+      "Camestres",
+      "Fresison",
+      "Ferio",
+      "Datisi",
+      "Darapti"
+    ]
+  },
+  {
+    "number": 10,
+    "modes": [
+      "Ferison",
+      "Fresison",
+      "Festino",
+      "Celarent",
+      "Darapti",
+      "Bramantip"
+    ]
+  },
+  {
+    "number": 11,
+    "modes": [
+      "Celarent",
+      "Festino",
+      "Felapton",
+      "Bocardo",
+      "Dimaris",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 12,
+    "modes": [
+      "Bramantip",
+      "Barbara",
+      "Felapton",
+      "Fresison",
+      "Baroco",
+      "Disamis"
+    ]
+  },
+  {
+    "number": 13,
+    "modes": [
+      "Camenes",
+      "Felapton",
+      "Bramantip",
+      "Ferio",
+      "Darapti",
+      "Cesare"
+    ]
+  },
+  {
+    "number": 14,
+    "modes": [
+      "Bramantip",
+      "Camestres",
+      "Camenes",
+      "Datisi",
+      "Barbara",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 15,
+    "modes": [
+      "Baroco",
+      "Ferison",
+      "Felapton",
+      "Ferio",
+      "Bramantip",
+      "Camenes"
+    ]
+  },
+  {
+    "number": 16,
+    "modes": [
+      "Felapton",
+      "Fesapo",
+      "Fresison",
+      "Ferison",
+      "Festino",
+      "Darii"
+    ]
+  },
+  {
+    "number": 17,
+    "modes": [
+      "Baroco",
+      "Felapton",
+      "Ferison",
+      "Fresison",
+      "Barbara",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 18,
+    "modes": [
+      "Dimaris",
+      "Ferio",
+      "Camestres",
+      "Ferison",
+      "Camenes",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 19,
+    "modes": [
+      "Cesare",
+      "Datisi",
+      "Bramantip",
+      "Bocardo",
+      "Fesapo",
+      "Celarent"
+    ]
+  },
+  {
+    "number": 20,
+    "modes": [
+      "Celarent",
+      "Datisi",
+      "Felapton",
+      "Bramantip",
+      "Camenes",
+      "Camestres"
+    ]
+  },
+  {
+    "number": 21,
+    "modes": [
+      "Fesapo",
+      "Celarent",
+      "Dimaris",
+      "Datisi",
+      "Ferison",
+      "Baroco"
+    ]
+  },
+  {
+    "number": 22,
+    "modes": [
+      "Camenes",
+      "Ferison",
+      "Camestres",
+      "Ferio",
+      "Darapti",
+      "Fresison"
+    ]
+  },
+  {
+    "number": 23,
+    "modes": [
+      "Dimaris",
+      "Bramantip",
+      "Celarent",
+      "Darapti",
+      "Datisi",
+      "Festino"
+    ]
+  },
+  {
+    "number": 24,
+    "modes": [
+      "Camenes",
+      "Barbara",
+      "Datisi",
+      "Festino",
+      "Bocardo",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 25,
+    "modes": [
+      "Darapti",
+      "Dimaris",
+      "Bramantip",
+      "Barbara",
+      "Datisi",
+      "Camestres"
+    ]
+  },
+  {
+    "number": 26,
+    "modes": [
+      "Bocardo",
+      "Camenes",
+      "Darii",
+      "Baroco",
+      "Darapti",
+      "Fresison"
+    ]
+  },
+  {
+    "number": 27,
+    "modes": [
+      "Darii",
+      "Dimaris",
+      "Darapti",
+      "Cesare",
+      "Camenes",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 28,
+    "modes": [
+      "Baroco",
+      "Ferio",
+      "Disamis",
+      "Camenes",
+      "Bramantip",
+      "Bocardo"
+    ]
+  },
+  {
+    "number": 29,
+    "modes": [
+      "Celarent",
+      "Disamis",
+      "Dimaris",
+      "Camestres",
+      "Bocardo",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 30,
+    "modes": [
+      "Datisi",
+      "Camestres",
+      "Darapti",
+      "Fresison",
+      "Darii",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 31,
+    "modes": [
+      "Bocardo",
+      "Celarent",
+      "Dimaris",
+      "Ferison",
+      "Camenes",
+      "Festino"
+    ]
+  },
+  {
+    "number": 32,
+    "modes": [
+      "Dimaris",
+      "Camestres",
+      "Disamis",
+      "Darapti",
+      "Barbara",
+      "Fesapo"
+    ]
+  },
+  {
+    "number": 33,
+    "modes": [
+      "Camestres",
+      "Ferio",
+      "Fresison",
+      "Ferison",
+      "Datisi",
+      "Dimaris"
+    ]
+  },
+  {
+    "number": 34,
+    "modes": [
+      "Ferio",
+      "Bocardo",
+      "Dimaris",
+      "Bramantip",
+      "Cesare",
+      "Darapti"
+    ]
+  },
+  {
+    "number": 35,
+    "modes": [
+      "Fesapo",
+      "Dimaris",
+      "Celarent",
+      "Disamis",
+      "Datisi",
+      "Festino"
+    ]
+  },
+  {
+    "number": 36,
+    "modes": [
+      "Fresison",
+      "Camenes",
+      "Felapton",
+      "Bocardo",
+      "Ferio",
+      "Cesare"
+    ]
+  },
+  {
+    "number": 37,
+    "modes": [
+      "Baroco",
+      "Felapton",
+      "Disamis",
+      "Camenes",
+      "Darii",
+      "Bramantip"
+    ]
+  },
+  {
+    "number": 38,
+    "modes": [
+      "Dimaris",
+      "Darii",
+      "Felapton",
+      "Fesapo",
+      "Baroco",
+      "Darapti"
+    ]
+  },
+  {
+    "number": 39,
+    "modes": [
+      "Darii",
+      "Darapti",
+      "Camenes",
+      "Felapton",
+      "Festino",
+      "Fresison"
+    ]
+  },
+  {
+    "number": 40,
+    "modes": [
+      "Fesapo",
+      "Festino",
+      "Darapti",
+      "Datisi",
+      "Dimaris",
+      "Barbara"
+    ]
+  },
+  {
+    "number": 41,
+    "modes": [
+      "Celarent",
+      "Cesare",
+      "Bramantip",
+      "Disamis",
+      "Fresison",
+      "Darapti"
+    ]
+  },
+  {
+    "number": 42,
+    "modes": [
+      "Fesapo",
+      "Cesare",
+      "Ferison",
+      "Darapti",
+      "Bramantip",
+      "Ferio"
+    ]
+  },
+  {
+    "number": 43,
+    "modes": [
+      "Felapton",
+      "Bramantip",
+      "Camenes",
+      "Barbara",
+      "Cesare",
+      "Disamis"
+    ]
+  },
+  {
+    "number": 44,
+    "modes": [
+      "Festino",
+      "Disamis",
+      "Fesapo",
+      "Camenes",
+      "Felapton",
+      "Ferio"
+    ]
+  },
+  {
+    "number": 45,
+    "modes": [
+      "Darii",
+      "Camenes",
+      "Bramantip",
+      "Ferison",
+      "Datisi",
+      "Camestres"
+    ]
+  },
+  {
+    "number": 46,
+    "modes": [
+      "Fresison",
+      "Celarent",
+      "Datisi",
+      "Disamis",
+      "Cesare",
+      "Camenes"
+    ]
+  },
+  {
+    "number": 47,
+    "modes": [
+      "Dimaris",
+      "Felapton",
+      "Camestres",
+      "Disamis",
+      "Barbara",
+      "Bramantip"
+    ]
+  },
+  {
+    "number": 48,
+    "modes": [
+      "Baroco",
+      "Ferio",
+      "Fresison",
+      "Ferison",
+      "Disamis",
+      "Bramantip"
+    ]
+  },
+  {
+    "number": 49,
+    "modes": [
+      "Celarent",
+      "Fesapo",
+      "Baroco",
+      "Ferison",
+      "Disamis",
+      "Dimaris"
+    ]
+  },
+  {
+    "number": 50,
+    "modes": [
+      "Dimaris",
+      "Ferison",
+      "Disamis",
+      "Fesapo",
+      "Barbara",
+      "Cesare"
+    ]
+  }
+]

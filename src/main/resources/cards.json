@@ -1,0 +1,629 @@
+[
+  {
+    "name": "Barbara",
+    "figure": 1,
+    "mood": "AAA",
+    "premises": [
+      "Todo mamífero é animal.",
+      "Todo cachorro é mamífero."
+    ],
+    "conclusion": "Todo cachorro é animal.",
+    "id": "C001"
+  },
+  {
+    "name": "Barbara",
+    "figure": 1,
+    "mood": "AAA",
+    "premises": [
+      "Todo professor é profissional da educação.",
+      "Todo docente universitário é professor."
+    ],
+    "conclusion": "Todo docente universitário é profissional da educação.",
+    "id": "C002"
+  },
+  {
+    "name": "Barbara",
+    "figure": 1,
+    "mood": "AAA",
+    "premises": [
+      "Todo notebook é computador.",
+      "Todo ultrabook é notebook."
+    ],
+    "conclusion": "Todo ultrabook é computador.",
+    "id": "C003"
+  },
+  {
+    "name": "Celarent",
+    "figure": 1,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum réptil é ave.",
+      "Todo lagarto é réptil."
+    ],
+    "conclusion": "Nenhum lagarto é ave.",
+    "id": "C004"
+  },
+  {
+    "name": "Celarent",
+    "figure": 1,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum arquivo executável é imagem.",
+      "Todo PNG é imagem."
+    ],
+    "conclusion": "Nenhum PNG é arquivo executável.",
+    "id": "C005"
+  },
+  {
+    "name": "Celarent",
+    "figure": 1,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum vegetariano é consumidor de carne.",
+      "Todo vegano é vegetariano."
+    ],
+    "conclusion": "Nenhum vegano é consumidor de carne.",
+    "id": "C006"
+  },
+  {
+    "name": "Darii",
+    "figure": 1,
+    "mood": "AII",
+    "premises": [
+      "Todo estudante matriculado é aluno ativo.",
+      "Algum monitor é estudante matriculado."
+    ],
+    "conclusion": "Algum monitor é aluno ativo.",
+    "id": "C007"
+  },
+  {
+    "name": "Darii",
+    "figure": 1,
+    "mood": "AII",
+    "premises": [
+      "Todo celular 5G é smartphone.",
+      "Algum aparelho da turma é celular 5G."
+    ],
+    "conclusion": "Algum aparelho da turma é smartphone.",
+    "id": "C008"
+  },
+  {
+    "name": "Darii",
+    "figure": 1,
+    "mood": "AII",
+    "premises": [
+      "Todo servidor público concursado é servidor público.",
+      "Algum técnico administrativo é servidor público concursado."
+    ],
+    "conclusion": "Algum técnico administrativo é servidor público.",
+    "id": "C009"
+  },
+  {
+    "name": "Ferio",
+    "figure": 1,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum peixe é mamífero.",
+      "Algum animal de aquário é peixe."
+    ],
+    "conclusion": "Algum animal de aquário não é mamífero.",
+    "id": "C010"
+  },
+  {
+    "name": "Ferio",
+    "figure": 1,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum sábado é dia útil bancário.",
+      "Algum dia do fim de semana é sábado."
+    ],
+    "conclusion": "Algum dia do fim de semana não é dia útil bancário.",
+    "id": "C011"
+  },
+  {
+    "name": "Ferio",
+    "figure": 1,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum cabo de energia é cabo de dados.",
+      "Algum acessório do laboratório é cabo de energia."
+    ],
+    "conclusion": "Algum acessório do laboratório não é cabo de dados.",
+    "id": "C012"
+  },
+  {
+    "name": "Cesare",
+    "figure": 2,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum metal é material orgânico.",
+      "Todo osso é material orgânico."
+    ],
+    "conclusion": "Nenhum osso é metal.",
+    "id": "C013"
+  },
+  {
+    "name": "Cesare",
+    "figure": 2,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum boleto pago é boleto em aberto.",
+      "Todo boleto vencido é boleto em aberto."
+    ],
+    "conclusion": "Nenhum boleto vencido é boleto pago.",
+    "id": "C014"
+  },
+  {
+    "name": "Cesare",
+    "figure": 2,
+    "mood": "EAE",
+    "premises": [
+      "Nenhum software proprietário é software de código aberto.",
+      "Todo Linux é software de código aberto."
+    ],
+    "conclusion": "Nenhum Linux é software proprietário.",
+    "id": "C015"
+  },
+  {
+    "name": "Camestres",
+    "figure": 2,
+    "mood": "AEE",
+    "premises": [
+      "Todo felino é mamífero.",
+      "Nenhum réptil é mamífero."
+    ],
+    "conclusion": "Nenhum réptil é felino.",
+    "id": "C016"
+  },
+  {
+    "name": "Camestres",
+    "figure": 2,
+    "mood": "AEE",
+    "premises": [
+      "Todo e-mail institucional é e-mail corporativo.",
+      "Nenhum e-mail pessoal é e-mail corporativo."
+    ],
+    "conclusion": "Nenhum e-mail pessoal é e-mail institucional.",
+    "id": "C017"
+  },
+  {
+    "name": "Camestres",
+    "figure": 2,
+    "mood": "AEE",
+    "premises": [
+      "Todo exame de sangue é exame laboratorial.",
+      "Nenhuma consulta médica é exame laboratorial."
+    ],
+    "conclusion": "Nenhuma consulta médica é exame de sangue.",
+    "id": "C018"
+  },
+  {
+    "name": "Festino",
+    "figure": 2,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum inadimplente é aluno regular.",
+      "Algum matriculado é aluno regular."
+    ],
+    "conclusion": "Algum matriculado não é inadimplente.",
+    "id": "C019"
+  },
+  {
+    "name": "Festino",
+    "figure": 2,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum alimento vencido é alimento próprio para consumo.",
+      "Algum item da geladeira é alimento próprio para consumo."
+    ],
+    "conclusion": "Algum item da geladeira não é alimento vencido.",
+    "id": "C020"
+  },
+  {
+    "name": "Festino",
+    "figure": 2,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum software desatualizado é software seguro.",
+      "Algum sistema do laboratório é software seguro."
+    ],
+    "conclusion": "Algum sistema do laboratório não é software desatualizado.",
+    "id": "C021"
+  },
+  {
+    "name": "Baroco",
+    "figure": 2,
+    "mood": "AOO",
+    "premises": [
+      "Todo cirurgião é profissional da saúde.",
+      "Algum estudante não é profissional da saúde."
+    ],
+    "conclusion": "Algum estudante não é cirurgião.",
+    "id": "C022"
+  },
+  {
+    "name": "Baroco",
+    "figure": 2,
+    "mood": "AOO",
+    "premises": [
+      "Todo veículo elétrico é veículo.",
+      "Algum patinete não é veículo."
+    ],
+    "conclusion": "Algum patinete não é veículo elétrico.",
+    "id": "C023"
+  },
+  {
+    "name": "Baroco",
+    "figure": 2,
+    "mood": "AOO",
+    "premises": [
+      "Todo professor efetivo é servidor efetivo.",
+      "Algum colaborador terceirizado não é servidor efetivo."
+    ],
+    "conclusion": "Algum colaborador terceirizado não é professor efetivo.",
+    "id": "C024"
+  },
+  {
+    "name": "Darapti",
+    "figure": 3,
+    "mood": "AAI",
+    "premises": [
+      "Todo professor é graduado.",
+      "Todo professor é servidor da instituição."
+    ],
+    "conclusion": "Algum servidor da instituição é graduado.",
+    "id": "C025"
+  },
+  {
+    "name": "Darapti",
+    "figure": 3,
+    "mood": "AAI",
+    "premises": [
+      "Todo desenvolvedor é profissional de TI.",
+      "Todo desenvolvedor é integrante de equipe de projeto."
+    ],
+    "conclusion": "Algum integrante de equipe de projeto é profissional de TI.",
+    "id": "C026"
+  },
+  {
+    "name": "Darapti",
+    "figure": 3,
+    "mood": "AAI",
+    "premises": [
+      "Todo médico é profissional da saúde.",
+      "Todo médico é pessoa com registro profissional."
+    ],
+    "conclusion": "Alguma pessoa com registro profissional é profissional da saúde.",
+    "id": "C027"
+  },
+  {
+    "name": "Disamis",
+    "figure": 3,
+    "mood": "IAI",
+    "premises": [
+      "Algum professor é pesquisador.",
+      "Todo professor é servidor da instituição."
+    ],
+    "conclusion": "Algum servidor da instituição é pesquisador.",
+    "id": "C028"
+  },
+  {
+    "name": "Disamis",
+    "figure": 3,
+    "mood": "IAI",
+    "premises": [
+      "Algum aluno é monitor.",
+      "Todo aluno é estudante."
+    ],
+    "conclusion": "Algum estudante é monitor.",
+    "id": "C029"
+  },
+  {
+    "name": "Disamis",
+    "figure": 3,
+    "mood": "IAI",
+    "premises": [
+      "Algum motorista é entregador.",
+      "Todo motorista é condutor habilitado."
+    ],
+    "conclusion": "Algum condutor habilitado é entregador.",
+    "id": "C030"
+  },
+  {
+    "name": "Datisi",
+    "figure": 3,
+    "mood": "AII",
+    "premises": [
+      "Todo felino é mamífero.",
+      "Algum felino é animal doméstico."
+    ],
+    "conclusion": "Algum animal doméstico é mamífero.",
+    "id": "C031"
+  },
+  {
+    "name": "Datisi",
+    "figure": 3,
+    "mood": "AII",
+    "premises": [
+      "Todo notebook é computador.",
+      "Algum notebook é equipamento do laboratório."
+    ],
+    "conclusion": "Algum equipamento do laboratório é computador.",
+    "id": "C032"
+  },
+  {
+    "name": "Datisi",
+    "figure": 3,
+    "mood": "AII",
+    "premises": [
+      "Todo professor é profissional da educação.",
+      "Algum professor é coordenador."
+    ],
+    "conclusion": "Algum coordenador é profissional da educação.",
+    "id": "C033"
+  },
+  {
+    "name": "Felapton",
+    "figure": 3,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum peixe é mamífero.",
+      "Todo peixe é animal aquático."
+    ],
+    "conclusion": "Algum animal aquático não é mamífero.",
+    "id": "C034"
+  },
+  {
+    "name": "Felapton",
+    "figure": 3,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum alimento vencido é próprio para consumo.",
+      "Todo alimento vencido é item da despensa."
+    ],
+    "conclusion": "Algum item da despensa não é próprio para consumo.",
+    "id": "C035"
+  },
+  {
+    "name": "Felapton",
+    "figure": 3,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum arquivo executável é documento PDF.",
+      "Todo arquivo executável é arquivo de programa."
+    ],
+    "conclusion": "Algum arquivo de programa não é documento PDF.",
+    "id": "C036"
+  },
+  {
+    "name": "Bocardo",
+    "figure": 3,
+    "mood": "OAO",
+    "premises": [
+      "Algum professor não é pesquisador.",
+      "Todo professor é servidor da instituição."
+    ],
+    "conclusion": "Algum servidor da instituição não é pesquisador.",
+    "id": "C037"
+  },
+  {
+    "name": "Bocardo",
+    "figure": 3,
+    "mood": "OAO",
+    "premises": [
+      "Algum estudante não é bolsista.",
+      "Todo estudante é aluno matriculado."
+    ],
+    "conclusion": "Algum aluno matriculado não é bolsista.",
+    "id": "C038"
+  },
+  {
+    "name": "Bocardo",
+    "figure": 3,
+    "mood": "OAO",
+    "premises": [
+      "Algum motorista não é entregador.",
+      "Todo motorista é condutor habilitado."
+    ],
+    "conclusion": "Algum condutor habilitado não é entregador.",
+    "id": "C039"
+  },
+  {
+    "name": "Ferison",
+    "figure": 3,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum peixe é mamífero.",
+      "Algum peixe é animal de aquário."
+    ],
+    "conclusion": "Algum animal de aquário não é mamífero.",
+    "id": "C040"
+  },
+  {
+    "name": "Ferison",
+    "figure": 3,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum boleto pago é boleto em aberto.",
+      "Algum boleto pago é comprovante do mês."
+    ],
+    "conclusion": "Algum comprovante do mês não é boleto em aberto.",
+    "id": "C041"
+  },
+  {
+    "name": "Ferison",
+    "figure": 3,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum alimento vencido é próprio para consumo.",
+      "Algum alimento vencido é item da geladeira."
+    ],
+    "conclusion": "Algum item da geladeira não é próprio para consumo.",
+    "id": "C042"
+  },
+  {
+    "name": "Bramantip",
+    "figure": 4,
+    "mood": "AAI",
+    "premises": [
+      "Todo docente universitário é professor.",
+      "Todo professor é servidor da instituição."
+    ],
+    "conclusion": "Algum servidor da instituição é docente universitário.",
+    "id": "C043"
+  },
+  {
+    "name": "Bramantip",
+    "figure": 4,
+    "mood": "AAI",
+    "premises": [
+      "Todo cirurgião é médico.",
+      "Todo médico é profissional da saúde."
+    ],
+    "conclusion": "Algum profissional da saúde é cirurgião.",
+    "id": "C044"
+  },
+  {
+    "name": "Bramantip",
+    "figure": 4,
+    "mood": "AAI",
+    "premises": [
+      "Todo desenvolvedor backend é desenvolvedor.",
+      "Todo desenvolvedor é profissional de TI."
+    ],
+    "conclusion": "Algum profissional de TI é desenvolvedor backend.",
+    "id": "C045"
+  },
+  {
+    "name": "Camenes",
+    "figure": 4,
+    "mood": "AEE",
+    "premises": [
+      "Todo felino é mamífero.",
+      "Nenhum mamífero é réptil."
+    ],
+    "conclusion": "Nenhum réptil é felino.",
+    "id": "C046"
+  },
+  {
+    "name": "Camenes",
+    "figure": 4,
+    "mood": "AEE",
+    "premises": [
+      "Todo professor efetivo é servidor efetivo.",
+      "Nenhum servidor efetivo é terceirizado."
+    ],
+    "conclusion": "Nenhum terceirizado é professor efetivo.",
+    "id": "C047"
+  },
+  {
+    "name": "Camenes",
+    "figure": 4,
+    "mood": "AEE",
+    "premises": [
+      "Todo carro elétrico é veículo elétrico.",
+      "Nenhum veículo elétrico é movido a gasolina."
+    ],
+    "conclusion": "Nenhum movido a gasolina é carro elétrico.",
+    "id": "C048"
+  },
+  {
+    "name": "Dimaris",
+    "figure": 4,
+    "mood": "IAI",
+    "premises": [
+      "Algum pesquisador é professor.",
+      "Todo professor é servidor da instituição."
+    ],
+    "conclusion": "Algum servidor da instituição é pesquisador.",
+    "id": "C049"
+  },
+  {
+    "name": "Dimaris",
+    "figure": 4,
+    "mood": "IAI",
+    "premises": [
+      "Algum aluno é monitor.",
+      "Todo monitor é bolsista."
+    ],
+    "conclusion": "Algum bolsista é aluno.",
+    "id": "C050"
+  },
+  {
+    "name": "Dimaris",
+    "figure": 4,
+    "mood": "IAI",
+    "premises": [
+      "Algum entregador é motorista.",
+      "Todo motorista é condutor habilitado."
+    ],
+    "conclusion": "Algum condutor habilitado é entregador.",
+    "id": "C051"
+  },
+  {
+    "name": "Fesapo",
+    "figure": 4,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum peixe é mamífero.",
+      "Todo mamífero é animal terrestre."
+    ],
+    "conclusion": "Algum animal terrestre não é peixe.",
+    "id": "C052"
+  },
+  {
+    "name": "Fesapo",
+    "figure": 4,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum arquivo executável é documento PDF.",
+      "Todo documento PDF é material de estudo."
+    ],
+    "conclusion": "Algum material de estudo não é arquivo executável.",
+    "id": "C053"
+  },
+  {
+    "name": "Fesapo",
+    "figure": 4,
+    "mood": "EAO",
+    "premises": [
+      "Nenhum inadimplente é aluno regular.",
+      "Todo aluno regular é matriculado."
+    ],
+    "conclusion": "Algum matriculado não é inadimplente.",
+    "id": "C054"
+  },
+  {
+    "name": "Fresison",
+    "figure": 4,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum inadimplente é aluno regular.",
+      "Algum aluno regular é monitor."
+    ],
+    "conclusion": "Algum monitor não é inadimplente.",
+    "id": "C055"
+  },
+  {
+    "name": "Fresison",
+    "figure": 4,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum alimento vencido é alimento próprio para consumo.",
+      "Algum item da geladeira é alimento próprio para consumo."
+    ],
+    "conclusion": "Algum item da geladeira não é alimento vencido.",
+    "id": "C056"
+  },
+  {
+    "name": "Fresison",
+    "figure": 4,
+    "mood": "EIO",
+    "premises": [
+      "Nenhum software desatualizado é software seguro.",
+      "Algum software seguro é sistema do laboratório."
+    ],
+    "conclusion": "Algum sistema do laboratório não é software desatualizado.",
+    "id": "C057"
+  }
+]
